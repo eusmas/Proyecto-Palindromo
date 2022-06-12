@@ -1,19 +1,19 @@
 def palindromo(palabra):
-    palabra=palabra.replace(" ", "")
-    palabra=palabra.lower()
-    palabra_invertida=palabra[::-1]
-    if palabra==palabra_invertida:
+    palabra=palabra.replace(" ", "").lower()
+    if palabra[::]==palabra[::-1]:
         return True
     else:
         return False
-
-
+#El operador de comparación == genera un boolean (True o False), podemos aprovechar esto y simplificar la función:
+# def palindromo(palabra):
+#     palabra = palabra.replace(' ','').lower()    
+#     return palabra == palabra[::-1]
 
 
 def run():
     palabra=input("Escribe una palabra: ")
-    es_palindromo=palindromo(palabra)
-    if es_palindromo==True:
+    
+    if palindromo(palabra):
         print("Es Palindromo")
     else:
         print("No es Palindromo")
